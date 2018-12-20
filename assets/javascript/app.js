@@ -96,25 +96,27 @@ $(document).ready(function () {
             timerRuns();
             for(let i = 0; i < gameQA.length; i++) {
             holder.push(gameQA[i]);
-    }
-        })
+        }
+    })
+
     // This function starts the time and starts to decrements by 1 second.
     function timerRuns(){
         if (!ticking) {
-        intervalId = setInterval(decrement, 1000); 
+        intervalId = setInterval(decrement, 1000);
         ticking = true;
         }
     }
+
     // The time will appear and show it counting down.
     function decrement() {
-        $("#timer").html("<h2>Time remaining: " + timer + "</h2>");
+        $("#timer").html("<h3>Time Left: " + timer + "</h3>");
         timer --;
     
         // If the timer hits 0 before the player selects an answer, the "Time's Up!" message will appear with the correct answer displayed.
         if (timer === 0) {
             noAnswerCount++;
             stopFunction();
-            $("#answer").html("<h3>Time's Up! The correct answer is: " + choose.options[choose.answer] + "</h3>");
+            $("#answer").html("<h4>Time's Up! The correct answer is: " + choose.options[choose.answer] + "</h4>");
             hidepicture();
         }
     }
@@ -129,24 +131,18 @@ $(document).ready(function () {
         index = Math.floor(Math.random()*gameQA.length);
         choose = gameQA[index];
     
-    //	if (choose.shown) {
-    //		//recursive to continue to generate new index until one is chosen that has not shown in this game yet
-    //		showQuestion();
-    //	} else {
-    //		console.log(choose.question);
-            //iterate through answer array and display
-            $("#question").html("<h2>" + choose.question + "</h2>");
-            for(let i = 0; i < choose.options.length; i++) {
-                var userPick = $("<div>");
-                userPick.addClass("answerOptions");
-                userPick.html(choose.options[i]);
-                //assign array position to it so can check answer
-                userPick.attr("data-guessvalue", i);
-                $("#answer").append(userPick);
-    //		}
+    
+    // iterate through answer array and display
+    $("#question").html("<h3>" + choose.question + "</h3>");
+        for(let i = 0; i < choose.options.length; i++) {
+            let userPick = $("<div>");
+            userPick.addClass("answerOptions");
+            userPick.html(choose.options[i]);
+    //assign array position to it so can check answer
+    userPick.attr("data-guessvalue", i);
+    $("#answer").append(userPick);
     }
-    
-    
+      
     
     //click function to select answer and outcomes
     $(".answerOptions").on("click", function () {
@@ -170,8 +166,7 @@ $(document).ready(function () {
         }
     })
     }
-    
-    
+        
     function hidepicture () {
         $("#answer").append("<img src=" + choose.image + ">");
         newArray.push(choose);
@@ -181,13 +176,13 @@ $(document).ready(function () {
             $("#answer").empty();
             timer= 15;
     
-        //run the score screen if all questions answered
+        // The screen with the finals scores will appear if all of the counts equal the questionCount.
         if ((wrongCount + rightCount + noAnswerCount) === questionCount) {
             $("#question").empty();
             $("#question").html("<h2>Game Over!</h3>");
-            $("#answer").append("<h3> Right Answers: " + rightCount + "</h3>" );
-            $("#answer").append("<h3> Wrong Answers: " + wrongCount + "</h3>" );
-            $("#answer").append("<h3> No Answers: " + noAnswerCount + "</h3>" );
+            $("#answer").append("<h4> Right Answers: " + rightCount + "</h4>" );
+            $("#answer").append("<h4> Wrong Answers: " + wrongCount + "</h4>" );
+            $("#answer").append("<h4> No Answers: " + noAnswerCount + "</h4>" );
             rightCount = 0;
             wrongCount = 0;
             noAnswerCount = 0;

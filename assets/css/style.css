@@ -23,7 +23,7 @@ h1 {
 
 .container {
     margin: 10px auto;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.35);
     border: 2px solid black;
     height: 500px;
     width: 60%;
@@ -36,17 +36,22 @@ h1 {
     color: black;
 }
 
+#question {
+    font-size: 8mm;
+    font-weight: bold;
+}
+
 #answer {
     font-size: 8mm;
 }
 
-#.answerOptions:hover {
+.answerOptions:hover {
     font-weight: bold;
 }
 
 .btn {
     position: relative;
-    bottom: -150px;
+    bottom: -200px;
   }
 
 
