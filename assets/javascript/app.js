@@ -1,6 +1,6 @@
 $(document).ready(function (){
-    
-    // List of questions, options, answers, and photos associated with the correct answer.
+
+    // List of questions, options, answers, and photos associated with the correct answers.
     let gameQA = [
         {
             question: "Who of these Hall of Famers hit the least amount of World Series home runs in his career?", 
@@ -74,7 +74,8 @@ $(document).ready(function (){
             answer: 2,
             photo: "assets/images/juliojones.jpg"
         }];
-
+    
+    // More variables
     let correctCount = 0;
     let wrongCount = 0;
     let unanswerCount = 0;
@@ -87,6 +88,8 @@ $(document).ready(function (){
     let index;
     let newArray = [];
     let holder = [];
+
+    
 
 
 
