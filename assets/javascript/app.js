@@ -184,9 +184,9 @@ $(document).ready(function () {
             if ((wrongCount + rightCount + noAnswerCount) === questionCount) {
                 $("#question").empty();
                 $("#question").html("<h1>Game Over!</h1>");
-                $("#answer").append("<h4> Right Answers: " + rightCount + "</h4>" );
-                $("#answer").append("<h4> Wrong Answers: " + wrongCount + "</h4>" );
-                $("#answer").append("<h4> No Answers: " + noAnswerCount + "</h4>" );
+                $("#answer").append("<h2> Right Answers: " + rightCount + "</h2>" );
+                $("#answer").append("<h2> Wrong Answers: " + wrongCount + "</h2>" );
+                $("#answer").append("<h2> No Answers: " + noAnswerCount + "</h2>" );
                 rightCount = 0;
                 wrongCount = 0;
                 noAnswerCount = 0;
