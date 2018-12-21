@@ -22,7 +22,7 @@ h1 {
 }
 
 p {
-    font-size: 15mm;
+    font-size: 12mm;
     margin: 0;
 
 }
@@ -45,7 +45,7 @@ p {
 }
 
 #question {
-    font-size: 8mm;
+    font-size: 10mm;
     font-weight: bold;
 }
 
@@ -55,12 +55,13 @@ p {
 
 .answerOptions:hover {
     font-weight: bold;
+    color: blue;
 }
 
 .btn {
     position: relative;
     bottom: -200px;
-    height: 100px;
+    height: 90px;
     border: 2px solid white;
   }
 
