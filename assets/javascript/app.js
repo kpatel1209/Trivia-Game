@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     // This variable will hold an array of questions, options, answers, and images for the game.
     let gameQA = [
         {
@@ -45,7 +45,7 @@ $(document).ready(function () {
             image: "./assets/images/marthasvineyard.png"
         }, 
         {
-            question: "See ya!” is the iconic home run call of what baseball announcer?", 
+            question: "'See ya!' is the iconic home run call of what baseball announcer?", 
             options: ["Joe Buck", "Bob Uecker", "Michael Kay", "Rod Allen" ],
             answer: 2,
             image: "./assets/images/michaelkay.jpg"
@@ -139,8 +139,9 @@ $(document).ready(function () {
             let userPick = $("<div>");
             userPick.addClass("answerOptions");
             userPick.html(choose.options[i]);
+
     //assign array position to it so can check answer
-    userPick.attr("data-guessvalue", i);
+    userPick.attr("data-pickvalue", i);
     $("#answer").append(userPick);
     }
       
@@ -148,7 +149,7 @@ $(document).ready(function () {
     //click function to select answer and outcomes
     $(".answerOptions").on("click", function () {
         //grab array position from userChoice
-        userChoice = parseInt($(this).attr("data-guessvalue"));
+        userChoice = parseInt($(this).attr("data-pickvalue"));
     
         //correct guess or wrong guess outcomes
         if (userChoice === choose.answer) {
