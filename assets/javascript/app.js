@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    
     // This variable will hold an array of questions, options, answers, and images for the game.
     let gameQA = [
         {
