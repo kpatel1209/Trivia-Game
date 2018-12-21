@@ -74,6 +74,7 @@ $(document).ready(function () {
             answer: 2,
             image: "./assets/images/juliojones.jpg"
         }];
+
     // More variables
     let rightCount = 0;
     let wrongCount = 0;
@@ -100,7 +101,7 @@ $(document).ready(function () {
         }
     })
 
-    // This function starts the time and starts to decrements by 1 second.
+    // This function starts the timer and will decrement by 1 second.
     function timerRuns(){
         if (!ticking) {
         intervalId = setInterval(decrement, 1000);
@@ -108,7 +109,7 @@ $(document).ready(function () {
         }
     }
 
-    // The time will appear and show it counting down.
+    // The time will appear and show it counting down the seconds.
     function decrement() {
         $("#timer").html("<h3>Time Left: " + timer + "</h3>");
         timer --;
@@ -127,43 +128,44 @@ $(document).ready(function () {
         ticking = false;
         clearInterval(intervalId);
     }
+
     // Questions will be randomly selected from the gameQA array and the options to choose from will be displayed.
     function showQuestion() {
         index = Math.floor(Math.random()*gameQA.length);
         choose = gameQA[index];
     
-    
-    // iterate through answer array and display
+    // Loop through answer options and display.
     $("#question").html("<h3>" + choose.question + "</h3>");
         for(let i = 0; i < choose.options.length; i++) {
-            let userPick = $("<div>");
-            userPick.addClass("answerOptions");
-            userPick.html(choose.options[i]);
+            let userSelection = $("<div>");
+            userSelection.addClass("answerOptions");
+            userSelection.html(choose.options[i]);
 
-    //assign array position to it so can check answer
-    userPick.attr("data-pickvalue", i);
-    $("#answer").append(userPick);
+    // The array position needs to be assigned so the answer can be checked.
+    userSelection.attr("data-pickvalue", i);
+    $("#answer").append(userSelection);
     }
-      
-    
-    //click function to select answer and outcomes
+          
+    // This click function will allow the player to choose an answer.
+    // click function to select answer and outcomes
     $(".answerOptions").on("click", function () {
         //grab array position from userChoice
         userChoice = parseInt($(this).attr("data-pickvalue"));
     
-        //correct guess or wrong guess outcomes
+        // This statement will compare the player's answer with the correct answer.
+        // Correct or Wrong will appear on the screen dependent on the outcome.
         if (userChoice === choose.answer) {
             stopFunction();
             rightCount++;
             userChoice="";
-            $("#answer").html("<h3>Correct!</h3>");
+            $("#answer").html("<h2><b>Correct!</b></h2>");
             hidepicture();
     
         } else {
             stopFunction();
             wrongCount++;
             userChoice="";
-            $("#answer").html("<h3>Wrong! The correct answer is: " + choose.options[choose.answer] + "</h3>");
+            $("#answer").html("<h2><b>Wrong! The correct answer is: " + choose.options[choose.answer] + "</b></h2>");
             hidepicture();
         }
     })
@@ -178,10 +180,10 @@ $(document).ready(function () {
             $("#answer").empty();
             timer= 15;
     
-        // The screen with the finals scores will appear if all of the counts equal the questionCount.
+        // The screen with the finals results will appear if all of the counts equal the amount of questionCount.
         if ((wrongCount + rightCount + noAnswerCount) === questionCount) {
             $("#question").empty();
-            $("#question").html("<h2>Game Over!</h3>");
+            $("#question").html("<h1>Game Over!</h1>");
             $("#answer").append("<h4> Right Answers: " + rightCount + "</h4>" );
             $("#answer").append("<h4> Wrong Answers: " + wrongCount + "</h4>" );
             $("#answer").append("<h4> No Answers: " + noAnswerCount + "</h4>" );
