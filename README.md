@@ -7,3 +7,5 @@ The user is given 15 seconds to review and answer each question.  The user can h
 If the user does not make a selection in 15 seconds, then the game will display that time is up and will also display the correct answer.  The user can try to answer the next question(s).
 
 After all of the questions have looped, the user will get to see their final results.  I was not able to code a restart function successfully, so at this time, the user will have to refresh the webpage in order to play again.
+
+https://kpatel1209.github.io/TriviaGame/
