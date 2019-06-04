@@ -1,83 +1,80 @@
 body {
-    background-image: url(../images/background.jpg);
-    background-size: 100%;
-    color: white;
+  background-image: url(../images/background.jpg);
+  background-size: 100%;
+  color: white;
 }
 
 .jumbotron {
-    background: none;
-    padding: 20px 0 15px 0;
-    margin: 0;
-    font-family: 'Luckiest Guy', cursive;
+  background: none;
+  padding: 20px 0 15px 0;
+  margin: 0;
+  font-family: 'Luckiest Guy', cursive;
 }
 
 h1 {
-    font-size: 20mm;
-    letter-spacing: 5px;
+  font-size: 20mm;
+  letter-spacing: 5px;
 }
 
 #play {
-    font-family: 'Luckiest Guy', cursive;
-    letter-spacing: 5px;
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: 5px;
 }
 
 p {
-    font-size: 12mm;
-    margin: 0;
+  font-size: 12mm;
+  margin: 0;
 
 }
 
 .container {
-    margin: 10px auto;
-    background-color: rgba(255, 255, 255, 0.35);
-    border: 5px solid black;
-    height: 500px;
-    width: 60%;
-    text-align: center;
+  margin: 10px auto;
+  background-color: rgba(255, 255, 255, 0.35);
+  border: 5px solid black;
+  height: 500px;
+  width: 60%;
+  text-align: center;
 }
 
 #timer,
 #question,
 #answer {
-    color: black;
-    padding: 0;
-    margin: 10px 0 0 0;
+  color: black;
+  padding: 0;
+  margin: 10px 0 0 0;
 }
 
 #question {
-    font-size: 10mm;
-    font-weight: bold;
+  font-size: 10mm;
+  font-weight: bold;
 }
 
 #answer {
-    font-size: 8mm;
+  font-size: 8mm;
 }
 
 .answerOptions:hover {
-    font-weight: bold;
-    color: blue;
+  font-weight: bold;
+  color: blue;
 }
 
 .btn {
-    position: relative;
-    bottom: -200px;
-    height: 90px;
-    border: 2px solid white;
-  }
-
-  footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: white;
-    color: black;
-    text-align: center;
-    height: 4%;
-    font-weight: bold;
-    padding: 6px 0 0 0;
-    font-family: 'Roboto', sans-serif;
+  position: relative;
+  bottom: -200px;
+  height: 90px;
+  border: 2px solid white;
 }
 
-
-
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  height: 4%;
+  font-weight: bold;
+  padding: 6px 0 0 0;
+  font-family: 'Roboto', sans-serif;
+}
